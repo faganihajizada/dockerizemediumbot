@@ -42,9 +42,7 @@ class medium_parser:
             q = {"muser_id":self.muser_id}
             upub_list = []
             pubs = self._db.medium_publications.find(q)
-            print(pubs)
             if pubs is not None:
-                print("I in if")
                 for pub in pubs:
                     upub_list.append(pub['muserpub_id'])
                 return upub_list
@@ -62,7 +60,6 @@ class medium_parser:
     def insert_new_pubs(self,publist):
         try:
             for pub in publist:
-                print(pub)
                 q = {"muser_id":self.muser_id,"muserpub_id":pub}
                 cursor = self._db.medium_publications.insert_one(q)
         except Exception as e:
