@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER Fagani Hajizada "hacizade.faqani@gmail.com"
 RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential cron pymongo
+RUN apt-get install -y python-pip python-dev build-essential cron
 ADD . /DevOpstalks
 WORKDIR /DevOpstalks
 RUN pip install -r requirements.txt
