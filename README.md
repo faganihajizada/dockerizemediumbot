@@ -6,4 +6,3 @@ Automatically Dockerized by Jenkins
 
 Special thanks to Yusif Yusifov (https://github.com/Komport) for development of Telegram Bot
 
-Telegram Channel Url: https://t.me/devopstalks
