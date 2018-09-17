@@ -1,13 +1,23 @@
-version: "2"
-services:
-  devopstalks:
+devopstalks:
     container_name: devopstalks
     restart: always
     build: .
     links:
       - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
+mongo:
+    image: mongo:latest
+    volumes_from:
+        - data
     ports:
-      - "27017:27017"
+        - "27017:27017"
+    command: --auth
+
+    container_name: "db_mongodb"
+
+data:
+    image: mongo:latest
+    volumes:
+        - /var/lib/mongo
+        - ./setup:/setup
+    command: "true"
+    container_name: "db_mongodb_data"
