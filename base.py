@@ -34,7 +34,7 @@ def my_method():
 		my_method()	
 
 	else:
-
+		print("please choose from one of the following: ")
 		my_method()	
 		
 my_method()		
